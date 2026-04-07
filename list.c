@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void)
+int main_list(void)
 {
-    // if you allocate memory, make sure to free it
+    // 1. Initial allocation for 3 integers
     int *list = malloc(3 * sizeof(int));
     if (list == NULL)
     {
@@ -13,28 +13,30 @@ int main(void)
     list[0] = 1;
     list[1] = 2;
     list[2] = 3;
-    list[3] = 4;
 
-    // malloc stands for memory allocation - returns address of a chunk of memory or will return null.
-    int *tmp = malloc(4 * sizeof(int));
+    // 2. Resize the memory safely to hold 4 integers
+    // realloc handles copying old data to the new location for you
+    int *tmp = realloc(list, 4 * sizeof(int));
     if (tmp == NULL)
     {
-        free(list);
+        free(list); // If realloc fails, manually free the original block
         return 1;
     }
-    for (int i =0; i < 4; i++)
-    {
-        tmp[i] = list[i];
-    }
-    tmp[3] = 4;
 
-    free(list)
+    // Update list to point to the new (potentially moved) memory block
     list = tmp;
 
-    for (int i = 0; i < 3; i++)
+    // 3. Now it is safe to add the 4th element
+    list[3] = 4;
+
+    // 4. Print all 4 elements
+    for (int i = 0; i < 4; i++)
     {
         printf("%i\n", list[i]);
     }
+
+    // 5. Always free the memory when finished to avoid leaks
     free(list);
+
     return 0;
 }

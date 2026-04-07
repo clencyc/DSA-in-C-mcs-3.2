@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1775552393 source:/home/clencyc/Dev/MCS_Presentation/linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+
+1775550708 source:/home/clencyc/Dev/MCS_Presentation/list.c
+	<stdio.h>
+	<stdlib.h>
+
+1775550455 source:/home/clencyc/Dev/MCS_Presentation/array.c
+	<stdio.h>
+	<stdlib.h>
+
