@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+greet() {
+	local name=$1
+	local msg=$2
+	
+	echo -n "hello $1"
+	if [[ -n $msg ]]; then
+		echo -n ($msg)"
+	fi
+	
+	echo
+
+}
+
+greet 1!
+greet 2 foo!
+greet 3 bar!
+
+

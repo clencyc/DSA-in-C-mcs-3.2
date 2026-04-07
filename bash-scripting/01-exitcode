@@ -1,0 +1,10 @@
+# Define the file to check
+filename="test_file.txt"
+
+# Standard 'if' structure using [ ] [cite: 5, 33]
+if [ -e "$filename" ]; then [cite: 53, 59]
+    echo "Success: $filename exists." [cite: 60]
+else
+    echo "Error: $filename could not be found." [cite: 61]
+    exit 1 [cite: 91]
+fi

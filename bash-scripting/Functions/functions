@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail [cite: 12, 87]
+
+# Function for standard logging 
+log() {
+    echo "[INFO] $(date +%H:%M:%S) - $1"
+}
+
+# Function for error messages 
+error() {
+    echo "[ERROR] $1" >&2
+}
+
+# Function to show how to use the script 
+usage() {
+    echo "Usage: $0 <filename>"
+    exit 1 [cite: 91]
+}
+
+# Logic using the functions
+if [ $# -eq 0 ]; then
+    usage
+fi
+
+
+log "Starting process..."
+
